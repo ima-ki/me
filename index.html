@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>ANGLIKA — Services digitaux aux tarifs locaux en Tunisie</title>
+<meta name="description" content="Google Business Profile, menus QR, rappels WhatsApp, documents, annonces immobilières, affichage événementiel et maintenance de site. Tarifs clairs en dinars tunisiens.">
+<meta name="theme-color" content="#0b0716">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_TN">
+<meta property="og:title" content="ANGLIKA — Votre business en mieux">
+<meta property="og:description" content="Des services digitaux simples, rapides et efficaces pour les petites entreprises en Tunisie.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0b0716;
+  --deep:#150c30;
+  --panel:#1b1140;
+  --panel-2:#231654;
+  --line:rgba(160,130,255,.28);
+  --violet:#7d4dff;
+  --yellow:#f5d02e;
+  --text:#f4f1ff;
+  --muted:#b9b0d6;
+  --radius:18px;
+  --sans:"Outfit",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --hand:"Caveat","Segoe Script","Bradley Hand",cursive;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--ink);color:var(--text);font-family:var(--sans);font-size:17px;line-height:1.6;overflow-x:hidden;
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+a{color:inherit}
+img,svg{max-width:100%}
+.wrap{width:min(1120px,calc(100% - 40px));margin-inline:auto}
+:focus-visible{outline:3px solid var(--yellow);outline-offset:3px;border-radius:6px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;left:12px;top:-60px;background:var(--yellow);color:var(--ink);padding:10px 16px;border-radius:8px;font-weight:700;z-index:100;text-decoration:none}
+.skip:focus{top:12px}
+
+/* Header */
+header{position:sticky;top:0;z-index:50;background:rgba(11,7,22,.82);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.bar{height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font-weight:600;font-size:24px;letter-spacing:.2em;text-decoration:none;color:var(--text)}
+.logo b{color:var(--yellow);font-weight:700}
+nav{display:flex;align-items:center;gap:30px}
+nav a{text-decoration:none;color:var(--muted);font-size:15px;font-weight:500;transition:color .2s}
+nav a:hover{color:var(--yellow)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 24px;border-radius:999px;border:1px solid var(--yellow);background:var(--yellow);color:var(--ink);font:700 15px/1 var(--sans);text-decoration:none;cursor:pointer;transition:transform .2s,background .2s,color .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:var(--yellow)}
+.btn.ghost:hover{background:var(--yellow);color:var(--ink)}
+nav .btn{padding:11px 20px;color:var(--ink)}
+nav .btn:hover{color:var(--ink)}
+
+/* Hero */
+.hero{position:relative;padding:96px 0 80px;overflow:hidden;isolation:isolate}
+.hero:before{content:"";position:absolute;inset:0;z-index:-2;
+  background:radial-gradient(900px 500px at 8% 0%,rgba(125,77,255,.38),transparent 60%),
+             radial-gradient(700px 420px at 100% 70%,rgba(70,36,160,.45),transparent 65%)}
+.swoosh{position:absolute;z-index:-1;right:-6%;top:-8%;width:min(760px,75vw);opacity:.9;pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:56px;align-items:center}
+.eyebrow{margin:0 0 20px;color:var(--muted);font-size:15px;letter-spacing:.14em;text-transform:uppercase}
+h1{margin:0 0 26px;font-size:clamp(42px,6.4vw,78px);line-height:1.02;letter-spacing:-.035em;font-weight:700}
+h1 .y{color:var(--yellow);display:block}
+.lead{max-width:540px;margin:0 0 34px;font-size:20px;color:#d9d3ee;font-weight:300}
+.cta-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.hand{font-family:var(--hand);color:var(--yellow);font-size:34px;line-height:1.05;transform:rotate(-6deg);margin:0}
+.hand svg{display:block;margin-top:6px;width:150px}
+.hero-aside{display:flex;flex-direction:column;align-items:flex-end;gap:36px}
+.chips{display:grid;grid-template-columns:repeat(8,1fr);gap:10px;margin-top:56px}
+.chip{display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center;font-size:13px;color:var(--text);text-decoration:none;font-weight:500;line-height:1.25}
+.chip i{display:grid;place-items:center;width:64px;height:64px;border-radius:18px;border:1px solid var(--line);background:linear-gradient(160deg,var(--panel-2),var(--deep));color:var(--yellow);transition:border-color .2s,transform .2s}
+.chip:hover i{border-color:var(--yellow);transform:translateY(-3px)}
+.chip svg{width:30px;height:30px}
+
+/* Reassurance strip */
+.strip{border-block:1px solid var(--line);background:var(--deep)}
+.strip ul{list-style:none;margin:0;padding:22px 0;display:flex;flex-wrap:wrap;gap:14px 44px;justify-content:space-between}
+.strip li{display:flex;align-items:center;gap:12px;color:var(--text);font-weight:500;font-size:16px}
+.strip svg{width:22px;height:22px;color:var(--yellow);flex:none}
+
+section{padding:100px 0}
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;margin-bottom:44px;flex-wrap:wrap}
+h2{margin:0;font-size:clamp(34px,4.6vw,54px);line-height:1.05;letter-spacing:-.03em;font-weight:700}
+h2 .y{color:var(--yellow)}
+.head p{margin:0;max-width:320px;color:var(--muted);font-size:15px;text-align:right}
+
+/* Price ledger */
+.ledger{display:grid;gap:12px}
+.row{display:grid;grid-template-columns:64px 1fr auto;gap:22px;align-items:center;padding:20px 24px;border-radius:var(--radius);border:1px solid var(--line);background:linear-gradient(100deg,var(--panel),var(--deep));text-decoration:none;color:inherit;transition:border-color .25s,transform .25s}
+.row:hover{border-color:var(--yellow);transform:translateX(4px)}
+.ico{display:grid;place-items:center;width:64px;height:64px;border-radius:50%;border:1px solid var(--line);background:var(--ink);color:var(--yellow)}
+.ico svg{width:30px;height:30px}
+.row h3{margin:0 0 4px;font-size:21px;font-weight:600;letter-spacing:-.01em}
+.row p{margin:0;color:var(--muted);font-size:15px;max-width:560px;line-height:1.5}
+.price{min-width:170px;text-align:center;padding:12px 18px;border-radius:14px;border:1px solid var(--line);background:rgba(11,7,22,.55)}
+.price small{display:block;font-size:12px;color:var(--muted);line-height:1.2}
+.price strong{display:block;font-size:30px;line-height:1.15;color:var(--yellow);font-weight:700;letter-spacing:-.02em}
+.price strong span{font-size:17px;font-weight:600;margin-left:3px}
+.price em{display:block;font-style:normal;font-size:12px;color:var(--muted);line-height:1}
+.price.devis strong{font-size:22px;padding-block:7px}
+.note{margin:22px 0 0;color:var(--muted);font-size:14px}
+
+/* Process */
+.process{background:linear-gradient(180deg,transparent,rgba(35,22,84,.45),transparent)}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;counter-reset:s}
+.steps li{position:relative;padding:34px 30px 30px;border-radius:var(--radius);border:1px solid var(--line);background:var(--panel);counter-increment:s}
+.steps li:before{content:counter(s);display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:var(--yellow);color:var(--ink);font-weight:700;margin-bottom:22px}
+.steps h3{margin:0 0 8px;font-size:22px;font-weight:600}
+.steps p{margin:0;color:var(--muted);font-size:16px}
+
+/* Contact */
+.contact-box{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;padding:56px;border-radius:28px;border:1px solid var(--line);background:linear-gradient(140deg,var(--panel-2),var(--deep) 70%);position:relative;overflow:hidden}
+.contact-box:after{content:"";position:absolute;right:-80px;bottom:-80px;width:260px;height:260px;border-radius:50%;background:var(--yellow);filter:blur(90px);opacity:.1;pointer-events:none}
+.contact-box h2{margin-bottom:18px}
+.contact-box > div > p{color:#d9d3ee;margin:0 0 30px;font-weight:300;font-size:19px}
+.coords{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.coords li{display:flex;align-items:center;gap:14px;font-size:17px}
+.coords svg{width:22px;height:22px;color:var(--yellow);flex:none}
+.coords a{text-decoration:none}
+.coords a:hover{color:var(--yellow)}
+form{display:grid;gap:16px;position:relative;z-index:1}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+label{display:grid;gap:7px;font-size:14px;font-weight:500;color:var(--muted)}
+input,select,textarea{width:100%;padding:14px 16px;border-radius:12px;border:1px solid var(--line);background:rgba(11,7,22,.7);color:var(--text);font:400 16px/1.4 var(--sans)}
+select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' fill='none' stroke='%23f5d02e' stroke-width='2'%3E%3Cpath d='m1 1 6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:44px}
+textarea{min-height:120px;resize:vertical}
+input::placeholder,textarea::placeholder{color:#7f76a0}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--yellow);box-shadow:0 0 0 3px rgba(245,208,46,.25)}
+.hp{position:absolute;left:-9999px}
+.status{min-height:24px;margin:0;font-size:15px}
+.status.ok{color:#8ff0b0}
+.status.err{color:#ffb4a8}
+form .btn{justify-self:start}
+form .btn[disabled]{opacity:.6;cursor:wait;transform:none}
+
+footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);font-size:14px}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+
+/* Single page-load sequence */
+@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+.hero .wrap > *,.hero-grid > *{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
+.hero-grid > :nth-child(2){animation-delay:.15s}
+.chips{animation:rise .8s .3s cubic-bezier(.2,.7,.2,1) both}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*:before,*:after{animation:none!important;transition:none!important}
+}
+
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:40px}
+  .hero-aside{align-items:flex-start;flex-direction:row-reverse;justify-content:flex-end}
+  .contact-box{grid-template-columns:1fr;padding:34px 26px;gap:36px}
+  .steps{grid-template-columns:1fr}
+  .head p{text-align:left}
+}
+@media(max-width:720px){
+  body{font-size:16px}
+  nav a:not(.btn){display:none}
+  section{padding:72px 0}
+  .hero{padding:60px 0 56px}
+  .chips{grid-template-columns:repeat(4,1fr);gap:20px 6px}.chip{font-size:12px}.chip i{width:56px;height:56px;border-radius:16px}.chip svg{width:26px;height:26px}
+  .row{grid-template-columns:52px 1fr;gap:6px 16px;padding:18px}
+  .ico{width:52px;height:52px}
+  .ico svg{width:24px;height:24px}
+  .price{grid-column:2;justify-self:start;text-align:left;min-width:0;display:flex;align-items:baseline;gap:8px;padding:8px 14px;margin-top:6px}
+  .price small,.price em{display:inline}
+  .price strong{font-size:24px}
+  .two{grid-template-columns:1fr}
+  .strip ul{flex-direction:column}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+
+<!-- Icons -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-google" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12 7 5h18l2 7"/><path d="M5 12c0 2 1.6 3.2 3.7 3.2S12.4 14 12.4 12c0 2 1.6 3.2 3.6 3.2s3.6-1.2 3.6-3.2c0 2 1.6 3.2 3.7 3.2S27 14 27 12"/><path d="M7 15.5V27h18V15.5"/><path d="M19.5 18.5h-3.5a3.2 3.2 0 1 0 0 6.4c1.8 0 3-.9 3.2-2.6H16"/></symbol>
+    <symbol id="i-web" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="16" r="11"/><path d="M5 16h22"/><path d="M16 5c3.2 3.2 4.8 6.9 4.8 11S19.200 23.800 16 27c-3.200-3.200-4.800-6.900-4.800-11S12.800 8.200 16 5Z"/></symbol>
+    <symbol id="i-monitor" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="24" height="17" rx="2.5"/><path d="M12 28h8M16 22v6"/></symbol>
+    <symbol id="i-qr" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="9" height="9" rx="1.5"/><rect x="19" y="4" width="9" height="9" rx="1.5"/><rect x="4" y="19" width="9" height="9" rx="1.5"/><path d="M19 19h3v3h-3zM25 19h3M19 25h3M25 22v6M22 28h3"/></symbol>
+    <symbol id="i-cal" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="6" width="24" height="22" rx="3"/><path d="M4 13h24M10 3v6M22 3v6M16 17.500v7M12.500 21h7"/></symbol>
+    <symbol id="i-doc" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3h11l7 7v19H8z"/><path d="M19 3v7h7M12 16h10M12 20h10M12 24h6"/></symbol>
+    <symbol id="i-star" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 4 3.600 7.600 8.400 1.100-6.100 5.800 1.500 8.300L16 22.700 8.600 26.800l1.500-8.300L4 12.700l8.400-1.100z"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-6.200 7-12a7 7 0 1 0-14 0c0 5.800 7 12 7 12Z"/><circle cx="12" cy="10" r="2.500"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.500 1.500a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l1.300-4A8.500 8.500 0 1 1 8.200 18.700L4 20Z"/></symbol>
+    <symbol id="i-hand" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z"/><path d="m8.500 12 2.500 2.500 4.500-5"/></symbol>
+    <symbol id="i-home" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15 16 5l12 10"/><path d="M7 13v15h18V13"/><path d="M13 28v-8h6v8"/></symbol>
+    <symbol id="i-screen" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="26" height="18" rx="2.500"/><path d="M14 10.500v7l6-3.500z"/><path d="M10 28h12M16 23v5"/></symbol>
+    <symbol id="i-tool" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.500 4a7 7 0 0 0-6.300 9.500L4.500 24.200a2.800 2.800 0 0 0 4 4l10.700-10.700A7 7 0 0 0 28 10.500l-4.200 4.200-3.700-.8-.8-3.700L23.500 6A7 7 0 0 0 21.500 4Z"/></symbol>
+  </defs>
+</svg>
+
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="#" aria-label="ANGLIKA, accueil"><b>A</b>NGLIKA</a>
+    <nav aria-label="Navigation principale">
+      <a href="#services">Services</a>
+      <a href="#methode">Comment ça marche</a>
+      <a href="#contact" class="btn">Contactez-nous</a>
+    </nav>
+  </div>
+</header>
+
+<main id="contenu">
+<!-- HERO -->
+<div class="hero">
+  <svg class="swoosh" viewBox="0 0 760 520" fill="none" aria-hidden="true">
+    <defs>
+      <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7d4dff" stop-opacity=".0"/><stop offset=".5" stop-color="#7d4dff" stop-opacity=".35"/><stop offset="1" stop-color="#f5d02e" stop-opacity=".55"/></linearGradient>
+    </defs>
+    <path d="M0 40C180 10 360 70 470 190S690 400 760 330" stroke="url(#g1)" stroke-width="2"/>
+    <path d="M40 0C220 -10 380 60 490 170S700 330 760 260" stroke="url(#g1)" stroke-width="1" opacity=".6"/>
+  </svg>
+
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <p class="eyebrow">Solutions digitales pour les petites entreprises</p>
+        <h1>Des services digitaux <span class="y">simples, rapides et efficaces.</span></h1>
+        <p class="lead">On vous aide à moderniser votre activité avec des outils concrets, adaptés à vos besoins.</p>
+        <div class="cta-row">
+          <a class="btn" href="#contact">Premier échange gratuit</a>
+          <a class="btn ghost" href="#services">Voir les tarifs</a>
+        </div>
+      </div>
+      <div class="hero-aside">
+        <p class="hand">Votre<br>business<br>en mieux
+          <svg viewBox="0 0 150 14" fill="none" aria-hidden="true"><path d="M3 10C40 3 90 3 147 5" stroke="#f5d02e" stroke-width="3" stroke-linecap="round"/></svg>
+        </p>
+      </div>
+    </div>
+
+    <div class="chips" role="list">
+      <a class="chip" role="listitem" href="#services"><i><svg aria-hidden="true"><use href="#i-google"/></svg></i>Google<br>Business</a>
+      <a class="chip" role="listitem" href="#services"><i><svg aria-hidden="true"><use href="#i-web"/></svg></i>Sites<br>Web</a>
+      <a class="chip" role="listitem" href="#services"><i><svg aria-hidden="true"><use href="#i-qr"/></svg></i>Menus<br>QR</a>
+      <a class="chip" role="listitem" href="#services"><i><svg aria-hidden="true"><use href="#i-cal"/></svg></i>Rappels<br>WhatsApp</a>
+      <a class="chip" role="listitem" href="#services"><i><svg aria-hidden="true"><use href="#i-doc"/></svg></i>Documents<br>&amp; PDF</a>
+      <a class="chip" role="listitem" href="#services"><i><svg aria-hidden="true"><use href="#i-home"/></svg></i>Annonces<br>immobilières</a>
+      <a class="chip" role="listitem" href="#services"><i><svg aria-hidden="true"><use href="#i-screen"/></svg></i>Affichage<br>événements</a>
+      <a class="chip" role="listitem" href="#services"><i><svg aria-hidden="true"><use href="#i-tool"/></svg></i>Maintenance<br>de site</a>
+    </div>
+  </div>
+</div>
+
+<div class="strip">
+  <div class="wrap">
+    <ul>
+      <li><svg aria-hidden="true"><use href="#i-pin"/></svg>Service local en Tunisie</li>
+      <li><svg aria-hidden="true"><use href="#i-hand"/></svg>Support personnalisé</li>
+      <li><svg aria-hidden="true"><use href="#i-chat"/></svg>Tarifs en dinars, clairs dès le départ</li>
+    </ul>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="wrap">
+    <div class="head">
+      <h2>Nos <span class="y">services</span></h2>
+      <p>Choisissez un service : le prix de départ et la fourchette sont affichés. Cliquez pour nous écrire.</p>
+    </div>
+
+    <div class="ledger">
+      <a class="row" href="#contact" data-service="Google Business Profile">
+        <span class="ico"><svg aria-hidden="true"><use href="#i-google"/></svg></span>
+        <div><h3>Google Business Profile</h3><p>Fiche Google complète : informations, photos, catégories, horaires et avis, pour que vos clients vous trouvent. Par établissement.</p></div>
+        <div class="price"><small>À partir de</small><strong>50<span>TND</span></strong><em>jusqu'à 150 TND</em></div>
+      </a>
+      <a class="row" href="#contact" data-service="Site Web / Landing Page">
+        <span class="ico"><svg aria-hidden="true"><use href="#i-monitor"/></svg></span>
+        <div><h3>Site Web / Landing Page</h3><p>Un site professionnel pour présenter votre activité, vos services ou vos offres.</p></div>
+        <div class="price"><small>À partir de</small><strong>100<span>TND</span></strong><em>jusqu'à 400 TND</em></div>
+      </a>
+      <a class="row" href="#contact" data-service="Menu QR">
+        <span class="ico"><svg aria-hidden="true"><use href="#i-qr"/></svg></span>
+        <div><h3>Menu QR</h3><p>Votre menu transformé en menu mobile moderne, accessible par QR code. Maintenance mensuelle possible dès 15 TND/mois.</p></div>
+        <div class="price"><small>À partir de</small><strong>50<span>TND</span></strong><em>jusqu'à 200 TND</em></div>
+      </a>
+      <a class="row" href="#contact" data-service="Rappels de rendez-vous">
+        <span class="ico"><svg aria-hidden="true"><use href="#i-cal"/></svg></span>
+        <div><h3>Rappels de rendez-vous</h3><p>Rappels automatiques par WhatsApp ou e-mail pour salons, cabinets et cliniques : moins d'oublis, moins de rendez-vous perdus.</p></div>
+        <div class="price"><small>À partir de</small><strong>30<span>TND</span></strong><em>/mois · jusqu'à 100 TND</em></div>
+      </a>
+      <a class="row" href="#contact" data-service="Documents Professionnels">
+        <span class="ico"><svg aria-hidden="true"><use href="#i-doc"/></svg></span>
+        <div><h3>Documents Professionnels</h3><p>Factures, devis, formulaires, listes de prix et fichiers PDF. Par pack.</p></div>
+        <div class="price"><small>À partir de</small><strong>20<span>TND</span></strong><em>jusqu'à 80 TND</em></div>
+      </a>
+      <a class="row" href="#contact" data-service="Annonces immobilières">
+        <span class="ico"><svg aria-hidden="true"><use href="#i-home"/></svg></span>
+        <div><h3>Annonces immobilières</h3><p>Photos améliorées, descriptions, plans visuels et publications pour réseaux sociaux. Par annonce.</p></div>
+        <div class="price"><small>À partir de</small><strong>30<span>TND</span></strong><em>jusqu'à 100 TND</em></div>
+      </a>
+      <a class="row" href="#contact" data-service="Affichage événementiel">
+        <span class="ico"><svg aria-hidden="true"><use href="#i-screen"/></svg></span>
+        <div><h3>Affichage événementiel</h3><p>Écrans animés pour conférences, mariages, hôtels et expositions. Par projet.</p></div>
+        <div class="price"><small>À partir de</small><strong>100<span>TND</span></strong><em>jusqu'à 800 TND</em></div>
+      </a>
+      <a class="row" href="#contact" data-service="Maintenance de site web">
+        <span class="ico"><svg aria-hidden="true"><use href="#i-tool"/></svg></span>
+        <div><h3>Maintenance de site web</h3><p>Mise à jour des textes, images, menus, produits et pages, avec sauvegardes. Abonnement mensuel.</p></div>
+        <div class="price"><small>À partir de</small><strong>30<span>TND</span></strong><em>/mois · jusqu'à 120 TND</em></div>
+      </a>
+    </div>
+    <p class="note">Tarifs de départ en dinars tunisiens (TND), selon la taille du projet. Un autre besoin ? Écrivez-nous : le devis est gratuit.</p>
+  </div>
+</section>
+
+<!-- METHODE -->
+<section id="methode" class="process">
+  <div class="wrap">
+    <div class="head">
+      <h2>Du besoin à la <span class="y">solution</span></h2>
+      <p>Un échange, un devis clair, un résultat que vous pouvez utiliser tout de suite.</p>
+    </div>
+    <ol class="steps">
+      <li><h3>Vous nous expliquez</h3><p>Dites-nous ce que vous voulez améliorer. Envoyez vos documents actuels ou décrivez simplement votre besoin.</p></li>
+      <li><h3>Nous préparons</h3><p>On organise vos informations et on construit la solution digitale adaptée à votre activité.</p></li>
+      <li><h3>Vous l'utilisez</h3><p>Vous recevez un outil concret, prêt pour vos clients et votre équipe, avec un support personnalisé.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-box">
+      <div>
+        <h2>Contactez-<span class="y">nous</span></h2>
+        <p>Un premier échange gratuit pour parler de votre activité. Ensemble, faisons grandir votre activité.</p>
+        <ul class="coords">
+          <li><svg aria-hidden="true"><use href="#i-phone"/></svg><a href="tel:+21652918971">+216 52 918 971</a></li>
+          <li><svg aria-hidden="true"><use href="#i-chat"/></svg><a href="https://wa.me/21652918971" target="_blank" rel="noopener">WhatsApp</a></li>
+          <li><svg aria-hidden="true"><use href="#i-mail"/></svg><a href="mailto:hello@anglika.digital">hello@anglika.digital</a></li>
+          <li><svg aria-hidden="true"><use href="#i-pin"/></svg>Tunisie</li>
+        </ul>
+      </div>
+
+      <form name="contact" method="POST" action="/merci.html" data-netlify="true" netlify-honeypot="bot-field" id="form">
+        <input type="hidden" name="form-name" value="contact">
+        <p class="hp"><label>Ne pas remplir : <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+        <div class="two">
+          <label>Nom
+            <input type="text" name="nom" autocomplete="name" required placeholder="Votre nom">
+          </label>
+          <label>Téléphone
+            <input type="tel" name="telephone" autocomplete="tel" required placeholder="+216 …">
+          </label>
+        </div>
+        <label>E-mail (facultatif)
+          <input type="email" name="email" autocomplete="email" placeholder="vous@exemple.com">
+        </label>
+        <label>Service souhaité
+          <select name="service" id="service">
+            <option>Google Business Profile</option>
+            <option>Site Web / Landing Page</option>
+            <option>Menu QR</option>
+            <option>Rappels de rendez-vous</option>
+            <option>Documents Professionnels</option>
+            <option>Annonces immobilières</option>
+            <option>Affichage événementiel</option>
+            <option>Maintenance de site web</option>
+            <option>Autre besoin (sur devis)</option>
+            <option>Je ne sais pas encore</option>
+          </select>
+        </label>
+        <label>Votre besoin
+          <textarea name="message" required placeholder="Décrivez en quelques mots ce que vous voulez améliorer."></textarea>
+        </label>
+        <button class="btn" type="submit" id="send">Envoyer ma demande</button>
+        <p class="status" id="status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>© <span id="y">2026</span> ANGLIKA. Un partenaire digital, proche de vous.</span>
+    <span>Tunisie · Service local, support personnalisé</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  document.getElementById('y').textContent = new Date().getFullYear();
+
+  // Preselect the service from the row that was clicked
+  var select = document.getElementById('service');
+  document.querySelectorAll('[data-service]').forEach(function(a){
+    a.addEventListener('click', function(){
+      var tmp = document.createElement('textarea');
+      tmp.innerHTML = a.getAttribute('data-service');
+      var wanted = tmp.value;
+      for (var i = 0; i < select.options.length; i++){
+        if (select.options[i].text === wanted){ select.selectedIndex = i; break; }
+      }
+    });
+  });
+
+  // Send the Netlify form without leaving the page
+  var form = document.getElementById('form'),
+      status = document.getElementById('status'),
+      btn = document.getElementById('send');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    status.className = 'status'; status.textContent = '';
+    btn.disabled = true; btn.textContent = 'Envoi en cours…';
+    fetch('/', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+      body: new URLSearchParams(new FormData(form)).toString()
+    }).then(function(r){
+      if (!r.ok) throw new Error('http ' + r.status);
+      form.reset();
+      status.className = 'status ok';
+      status.textContent = 'Merci ! Votre demande est bien envoyée. Nous vous recontactons rapidement.';
+    }).catch(function(){
+      status.className = 'status err';
+      status.textContent = 'Envoi impossible pour le moment. Écrivez-nous sur WhatsApp ou à hello@anglika.digital.';
+    }).finally(function(){
+      btn.disabled = false; btn.textContent = 'Envoyer ma demande';
+    });
+  });
+})();
+</script>
+</body>
+</html>
